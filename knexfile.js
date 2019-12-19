@@ -1,25 +1,28 @@
 module.exports = {
   development: {
     client: 'sqlite3',
-    connection: { filename: './database/auth.db3' },
+    connection: { filename: './restaurantPassport.db3' },
     useNullAsDefault: true,
     migrations: {
-      directory: './database/migrations',
+      directory: './migrations',
       tableName: 'dbmigrations',
     },
-    seeds: { directory: './database/seeds' },
+    seeds: { 
+      directory: './seeds'
+    },
   },
+
   testing: {
     client: 'sqlite3',
     connection: {
-      filename: './database/test.db3',
+      filename: './test.db3',
     },
     useNullAsDefault: true,
     migrations: {
-      directory: './database/migrations',
+      directory: './migrations',
     },
     seeds: {
-      directory: './database/seeds',
+      directory: './seeds',
     },
   },
 };

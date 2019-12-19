@@ -16,13 +16,30 @@ router.post("/register", (req, res) => {
   })
 })
 
+router.post("/login", (req, res) => {
+  let {username, password} = req.body
+
+  Users.findBy({username})
+  .first()
+  .then(user => {
+    if (user && bcrypt.compareSync(password, user.password)) {
+      res.status(200).json({message: "logged in!", username: username})
+    } else {
+      res.status(401).json({message: "oh shit! invaild credentials!"})
+    }
+  })
+  .catch(err => {
+    res.status(500).json({message: "server error", error: err})
+  })
+})
+
 router.get("/users", (req, res) => {
   Users.find()
     .then(users => {
       res.status(200).json(users)
     })
     .catch(err => {
-      res.status(500).json({error: err})
+      res.status(500).json({message: "server error", error: err})
     })
 })
 

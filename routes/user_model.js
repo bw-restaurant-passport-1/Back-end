@@ -8,7 +8,12 @@ function find() {
   return db("users")
 }
 
+function findBy(filter) {
+  return db("users").where(filter)
+}
+
 module.exports = {
   add,
-  find
+  find,
+  findBy
 }

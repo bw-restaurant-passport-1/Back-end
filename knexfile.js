@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     client: 'sqlite3',
-    connection: { filename: './restaurantPassport.db3' },
+    connection: { filename: './data/restaurantPassport.db3' },
     useNullAsDefault: true,
     migrations: {
       directory: './migrations',

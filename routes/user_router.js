@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs")
 
 router.post("/register", (req, res) => {
   let user = req.body
-  let hash = bcrypt.hashSync(user.password, 12)
+  let hash = bcrypt.hashSync(user.password, 14)
   user.password = hash
 
   Users.add(user)

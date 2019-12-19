@@ -1,6 +1,6 @@
 # Backend Documentaion
 
-if something doesn't work let me(Aiden) know!
+If something doesn't work let me(Aiden) know!
 
 <h1>Register</h1>
 
@@ -28,9 +28,9 @@ if something doesn't work let me(Aiden) know!
 | username       | String |   YES    |  YES   |                       |
 | password       | String |   YES    |   NO   |                       |
 
-<h1>get list of all users</h1>
+<h1>Get list of all users</h1>
 
-*`HTTP method:`***`POST`**
+*`HTTP method:`***`GET`**
 
 *`URL:`***`/api/users/users`**
 

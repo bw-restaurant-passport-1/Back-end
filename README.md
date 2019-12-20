@@ -2,6 +2,11 @@
 
 If something doesn't work let me(Aiden) know!
 
+hosting with heroku on 
+https://restaurant-passport1.herokuapp.com
+
+endpoint example: https://restaurant-passport1.herokuapp.com/api/users/login
+
 <h1>Register</h1>
 
 *`HTTP method:`***`POST`**
@@ -17,7 +22,7 @@ If something doesn't work let me(Aiden) know!
 | city           | String |   YES    |  NO    |                       |
 | avatarURL      | String |   NO     |  NO    |                       |
 
-returns registered message, user id,and token
+returns registered message, user id, and token
 
 <h1>Login</h1>
 

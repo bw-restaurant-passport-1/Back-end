@@ -17,6 +17,8 @@ If something doesn't work let me(Aiden) know!
 | city           | String |   YES    |  NO    |                       |
 | avatarURL      | String |   NO     |  NO    |                       |
 
+returns registered message, user id,and token
+
 <h1>Login</h1>
 
 *`HTTP method:`***`POST`**
@@ -28,10 +30,13 @@ If something doesn't work let me(Aiden) know!
 | username       | String |   YES    |  YES   |                       |
 | password       | String |   YES    |   NO   |                       |
 
+returns login message, username, and token
+
 <h1>Get list of all users</h1>
 
 *`HTTP method:`***`GET`**
 
 *`URL:`***`/api/users/users`**
 
-this is for testing and would be like an admin thing
+requires valid token
+shows all user info except for passwords (passwords are also hashed)

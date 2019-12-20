@@ -38,5 +38,6 @@ returns login message, username, and token
 
 *`URL:`***`/api/users/users`**
 
-requires valid token
+requires valid token passed in through Authorization header
+
 shows all user info except for passwords (passwords are also hashed)

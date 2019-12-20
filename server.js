@@ -12,5 +12,6 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan("dev"))
 server.use("/api/users", userRouter)
+server.use("/", "welcome to restaurant passport api!")
 
 module.exports = server;

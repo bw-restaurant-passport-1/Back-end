@@ -102,7 +102,7 @@ example
 
 valid token required
 
-*`HTTP method:`***`POST`**
+*`HTTP method:`***`PUT`**
 
 *`URL:`***`/api/restaurants/:id`**
 

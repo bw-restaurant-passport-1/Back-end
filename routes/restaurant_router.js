@@ -1,7 +1,5 @@
 const router = require("express").Router();
 const Restaurants = require("./restaurant_model")
-const jwt = require("jsonwebtoken")
-const secrets = require("../config/secrets")
 const auth = require("../middleware/auth_middleware")
 
 router.post("/", auth, (req, res) => {

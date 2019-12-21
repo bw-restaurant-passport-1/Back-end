@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan')
 
 const userRouter = require("./routes/user_router")
+const restaurantRouter = require("./routes/restaurant_router")
 
 const server = express();
 
@@ -12,6 +13,7 @@ server.use(cors());
 server.use(express.json());
 server.use(morgan("dev"))
 server.use("/api/users", userRouter)
+server.use("/api/restaurants", restaurantRouter)
 server.get("/", (req, res) => {
   res.status(200).json({message: "welcome"})
 })

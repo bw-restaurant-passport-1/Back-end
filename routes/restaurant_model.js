@@ -12,8 +12,13 @@ function findBy(filter) {
   return db("restaurants").where(filter)
 }
 
+function edit(data, id) {
+  return db("restaurants").where("id", "=", id).update(data)
+}
+
 module.exports = {
   add,
   find,
-  findBy
+  findBy,
+  edit
 }

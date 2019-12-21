@@ -14,6 +14,16 @@ router.post("/", auth, (req, res) => {
   })
 })
 
+router.put("/:id", auth, (req, res) => {
+  Restaurants.edit(req.body, req.params.id)
+  .then(restaurant => {
+    res.status(200).json({message: "restaurant updated"})
+  })
+  .catch(err => {
+    res.status(500).json({message: "server error", error: err})
+  })
+})
+
 router.get("/", (req, res) => {
   Restaurants.find()
     .then(restaurants => {

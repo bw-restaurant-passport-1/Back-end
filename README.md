@@ -22,6 +22,17 @@ endpoint example: https://restaurant-passport1.herokuapp.com/api/users/login
 | city           | String |   YES    |  NO    |                       |
 | avatarURL      | String |   NO     |  NO    |                       |
 
+example
+```
+{
+	"username": "jacob1",
+	"password": "pizza",
+	"name": "jac",
+	"email": "a2@a.com",
+	"city": "gilbert"
+}
+```
+
 returns registered message, user id, and token
 
 <h1>Login</h1>
@@ -34,6 +45,14 @@ returns registered message, user id, and token
 | :------------- | :----- | :------: | :----: | :-------------------- |
 | username       | String |   YES    |  YES   |                       |
 | password       | String |   YES    |   NO   |                       |
+
+example
+```
+{
+	"username": "jacob1",
+	"password": "pizza"
+}
+```
 
 returns login message, username, and token
 

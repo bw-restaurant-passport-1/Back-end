@@ -36,7 +36,7 @@ exports.up = function(knex) {
         .inTable('restaurants')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
-      table.bool("stamped")
+      table.bool("stamped").defaultTo(false)
       table.string("notes", 1024)
       table.integer("myRating", 3)
     })

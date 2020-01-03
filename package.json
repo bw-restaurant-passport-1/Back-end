@@ -19,7 +19,18 @@
     "sqlite3": "^4.1.1"
   },
   "engines": {
-    "node": "v12.13.0",
+    "node": "v12.14.0",
     "npm": "6.12.0"
-  }
+  },
+  "description": "If something doesn't work let me(Aiden) know!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bw-restaurant-passport-1/Back-end.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bw-restaurant-passport-1/Back-end/issues"
+  },
+  "homepage": "https://github.com/bw-restaurant-passport-1/Back-end#readme"
 }

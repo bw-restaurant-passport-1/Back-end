@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
 })
 
 router.get("/", (req, res) => {
-  Passsport.find()
+  Passport.findAll()
   .then(passes => {
     res.status(200).json(passes)
   })
@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/user/:id", (req, res) => {
-  Passsport.findByUserId(req.id)
+  Passport.findByUserId(req.id)
   .then(passes => {
     res.status(200).json(passes)
   })

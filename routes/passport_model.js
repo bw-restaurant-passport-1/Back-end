@@ -16,7 +16,7 @@ function findAll() {
   return db("passport")
 }
 
-module.exports {
+module.exports = {
   add,
   findByUser,
   findByRestaurant,

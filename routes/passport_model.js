@@ -29,10 +29,15 @@ function edit(data, id) {
   return db("passports").where("id", "=", id).update(data)
 }
 
+function remove(id) {
+  return db("passports").where("id", "=", id).del()
+}
+
 module.exports = {
   add,
   findByUserId,
   findByRestaurantId,
   findAll,
-  edit
+  edit,
+  remove
 }}

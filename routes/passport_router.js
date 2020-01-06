@@ -1,7 +1,8 @@
 const router = require("express").Router()
 const Passport = require("./passport_model")
+const auth = require("../middleware/auth_middleware")
 
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   Passport.add(req.body)
     .then(passes => {
       res.status(200).json({message: "passport created", passes})

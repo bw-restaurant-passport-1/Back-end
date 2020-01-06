@@ -12,8 +12,13 @@ function findByUserId(userId) {
 }
 
 function findByRestaurantId(restaurantId) {
+  console.log(restaurantId)
   return db("passports")
+  .join("users", "users.id", "=", "passports.user_id")
   .where("passports.restaurant_id", "=", restaurantId)
+  .select("notes", "myRating", "name", "avatarURL")
+  
+
 }
 
 function findAll() {

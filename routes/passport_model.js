@@ -25,9 +25,14 @@ function findAll() {
   return db("passports")
 }
 
+function edit(data, id) {
+  return db("passports").where("id", "=", id).update(data)
+}
+
 module.exports = {
   add,
   findByUserId,
   findByRestaurantId,
-  findAll
+  findAll,
+  edit
 }}

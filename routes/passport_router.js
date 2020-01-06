@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/user/:id", (req, res) => {
-  Passport.findByUserId(req.id)
+  Passport.findByUserId(req.params.id)
   .then(passes => {
     res.status(200).json(passes)
   })

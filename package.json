@@ -19,7 +19,7 @@
     "sqlite3": "^4.1.1"
   },
   "engines": {
-    "node": "v12.14.0",
+    "node": "v12.13.0",
     "npm": "6.12.0"
   },
   "description": "If something doesn't work let me(Aiden) know!",

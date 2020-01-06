@@ -4,11 +4,14 @@ function add(data) {
   return db("passports").insert(data)
 }
 
-function findByUser(userId) {
-  return db("passports").where("user_id", "=", userId)
+function findByUserId(userId) {
+  console.log(userId)
+  return db("restaurants")
+  .join("passports", "passports.restaurant_id", "=", "restaurants.id")
+  .where("passports.user_id", "=", userId)
 }
 
-function findByRestaurant(restaurantId) {
+function findByRestaurantId(restaurantId) {
   return db("passports").where("restaurant_id", "=", restaurantId)
 }
 
@@ -18,7 +21,7 @@ function findAll() {
 
 module.exports = {
   add,
-  findByUser,
-  findByRestaurant,
+  findByUserId,
+  findByRestaurantId,
   findAll
 }}

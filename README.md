@@ -151,7 +151,7 @@ valid token required
 
 review id passed in through url and new review passed in through request body
 
-<h1>EDelete Review</h1>
+<h1>Delete Review</h1>
 
 *`HTTP method:`***`DEL`**
 

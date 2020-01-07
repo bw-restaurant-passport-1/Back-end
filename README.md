@@ -127,4 +127,42 @@ pass in the id through url
 
 returns an array containing a single restaurant
 
+<h1>Add a Review</h1>
 
+valid token required
+
+*`HTTP method:`***`POST`**
+
+*`URL:`***`/api/passports`**
+
+| Name           | Type   | Required | Unique | Description           |
+| :------------- | :----- | :------: | :----: | :-------------------- |
+| user_id        | String |   YES    |  NO   |                       |
+| restaurant_id  | String |   YES    |   NO   |                       |
+| stamped        | bool   |   NO    |   NO   | Will be stored as a 0 (false) or 1 (true) |
+| notes          | String |   NO    |  NO   | The review                      |
+| myRating       | String |   NO    |  NO    | Should be 1 through 5                       |
+
+<h1>Get All Reviews</h1>
+ 
+ *`HTTP method:`***`GET`**
+
+*`URL:`***`/api/passports`**
+
+returns all reviews
+
+<h1>Get Reviews for Specific Restaurant</h1>
+
+ *`HTTP method:`***`GET`**
+
+*`URL:`***`/api/passports/restaurant/:id`**
+
+returns notes, rating, name, and avatarurl for each review
+
+<h1>Get Reviews for Specific User</h1>
+
+ *`HTTP method:`***`GET`**
+
+*`URL:`***`/api/passports/user/:id`**
+
+returns restaurant and user name, review, and rating

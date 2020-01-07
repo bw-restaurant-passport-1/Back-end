@@ -143,6 +143,22 @@ valid token required
 | notes          | String |   NO    |  NO   | The review                      |
 | myRating       | String |   NO    |  NO    | Should be 1 through 5                       |
 
+<h1>Edit Review</h1>
+
+*`HTTP method:`***`PUT`**
+
+*`URL:`***`/api/passports/:id`**
+
+review id passed in through url and new review passed in through request body
+
+<h1>EDelete Review</h1>
+
+*`HTTP method:`***`DEL`**
+
+*`URL:`***`/api/passports/:id`**
+
+review id passed in through url
+
 <h1>Get All Reviews</h1>
  
  *`HTTP method:`***`GET`**
@@ -166,3 +182,5 @@ returns notes, rating, name, and avatarurl for each review
 *`URL:`***`/api/passports/user/:id`**
 
 returns restaurant and user name, review, and rating
+
+

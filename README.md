@@ -72,7 +72,7 @@ valid token required
 
 *`HTTP method:`***`POST`**
 
-*`URL:`***`/api/restaurant`**
+*`URL:`***`/api/restaurants`**
 
 | Name           | Type   | Required | Unique | Description           |
 | :------------- | :----- | :------: | :----: | :-------------------- |

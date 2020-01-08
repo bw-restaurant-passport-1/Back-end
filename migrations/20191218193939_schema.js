@@ -8,7 +8,7 @@ exports.up = function(knex) {
       table.string("name", 255).notNullable()
       table.string("email", 255).notNullable().unique();
       table.string("city", 255).notNullable();
-      table.string("avatarURL", 255)
+      table.string("avatarURL", 255).defaultTo(null)
     })
     .createTable("restaurants", table => {
       table.increments();

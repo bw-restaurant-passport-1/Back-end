@@ -13,7 +13,7 @@ router.post("/register", (req, res) => {
   Users.add(user)
   .then(user => {
     const token = genToken(user)
-    res.status(200).json({message: "registered!", user_id: user, token: token})
+    res.status(200).json({message: "registered!", token: token})
   })
   .catch(err => {
     res.status(500).json({message: "server error", error: err})
@@ -64,21 +64,25 @@ router.get("/users", auth, (req, res) => {
     })
 })
 
-// router.get("/users/:id", auth, (req, res) => {
-//   Users.findBy({username})
-//   .first()
-//   .then(user => {
-//     if (user && bcrypt.compareSync(password, user.password)) {
-//       const token = genToken(user)
-//       res.status(200).json({message: "logged in!", username: username, token: token})
-//     } else {
-//       res.status(401).json({message: "oh shit! invaild credentials!"})
-//     }
-//   })
-//   .catch(err => {
-//     res.status(500).json({message: "server error", error: err})
-//   })
-// })
+router.put("/:id", auth, (req, res) => {
+  Users.edit(req.body, req.params.id)
+  .then(user => {
+    res.status(200).json({message: "edited!"})
+  })
+  .catch(err => {
+    res.status(500).json({message: "server error", error: err})
+  })
+})
+
+router.delete("/:id", auth, (req, res) => {
+  Users.remove(req.params.id)
+  .then(user => {
+    res.status(200).json("removed user id: " + req.params.id)
+  })
+  .catch(err => {
+    res.status(500).json({message: "server error", error: err})
+  })
+})
 
 function genToken(user) {
   const payload = {

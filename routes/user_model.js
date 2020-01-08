@@ -4,6 +4,14 @@ function add(user) {
   return db("users").insert(user)
 }
 
+function edit(data, id) {
+  return db("users").where("id", "=", id).update(data)
+}
+
+function remove(id) {
+  return db("users").where("id", "=", id).del()
+}
+
 function find() {
   return db("users")
 }
@@ -15,5 +23,7 @@ function findBy(filter) {
 module.exports = {
   add,
   find,
-  findBy
+  findBy,
+  edit,
+  remove
 }

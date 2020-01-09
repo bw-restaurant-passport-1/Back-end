@@ -78,7 +78,14 @@ router.get("/:id", auth, (req, res) => {
   Users.findBy({id: req.params.id})
   .then(user => {
     if (user) {
-    res.status(200).json(user)
+    res.status(200).json({
+      id: user.id,
+      username: user.username,
+      name: user.name,
+      email: user.email,
+      city: user.city,
+      avatarURL: user.avatarURL
+    })
     } else {
       res.status(404).json({message: "user not found"})
     }
@@ -114,7 +121,7 @@ function genToken(user) {
   };
 
   const options = {
-    expiresIn: '1h'
+    expiresIn: '10h'
   };
 
   const token = jwt.sign(payload, secrets.jwtSecret, options);

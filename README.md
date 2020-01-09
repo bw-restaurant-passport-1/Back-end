@@ -153,6 +153,8 @@ valid token required
 
 <h1>Edit Review</h1>
 
+requires valid token
+
 *`HTTP method:`***`PUT`**
 
 *`URL:`***`/api/passports/:id`**
@@ -160,6 +162,8 @@ valid token required
 review id passed in through url and new review passed in through request body
 
 <h1>Delete Review</h1>
+
+requires valid token
 
 *`HTTP method:`***`DEL`**
 

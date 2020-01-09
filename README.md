@@ -33,7 +33,7 @@ example
 }
 ```
 
-returns registered message, user id, and token
+returns their token and all user info except for their hashed password
 
 <h1>Login</h1>
 
@@ -54,7 +54,7 @@ example
 }
 ```
 
-returns login message, username, and token
+returns their token and all user info except for their hashed password
 
 <h1>Get list of all users</h1>
 
@@ -105,8 +105,17 @@ valid token required
 
 *`URL:`***`/api/restaurants/:id`**
 
-pass in the id through url and edited object though axios
+pass in the restaurant id through url and edited object though axios
 
+<h1>Delete restaurant</h1>
+
+valid token required
+
+*`HTTP method:`***`DELETE`**
+
+*`URL:`***`/api/restaurants/:id`**
+
+pass in the restaurant id through url
 
 <h1>Get list of all restaurants</h1>
 
@@ -180,6 +189,6 @@ returns notes, rating, name, and avatarurl for each review
 
 *`URL:`***`/api/passports/user/:id`**
 
-returns restaurant and user name, review, and rating
+returns restaurant information along with user name, review, and rating
 
 

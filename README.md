@@ -66,6 +66,34 @@ requires valid token passed in through Authorization header
 
 shows all user info except for passwords (passwords are also hashed)
 
+<h1>Get user by id</h1>
+
+*`HTTP method:`***`GET`**
+
+*`URL:`***`/api/users/:id`**
+
+pass in the user id through url
+
+<h1>Edit User</h1>
+
+requires valid token
+
+*`HTTP method:`***`PUT`**
+
+*`URL:`***`/api/users/:id`**
+
+user id passed in through url and user edits passed in through request body
+
+<h1>Delete User</h1>
+
+requires valid token
+
+*`HTTP method:`***`DEL`**
+
+*`URL:`***`/api/users/:id`**
+
+user id passed in through url
+
 <h1>Add restaurant</h1>
 
 valid token required
@@ -97,6 +125,24 @@ example
 }
 ```
 
+<h1>Get list of all restaurants</h1>
+
+*`HTTP method:`***`GET`**
+
+*`URL:`***`/api/restaurants`**
+
+returns all restaurants
+
+<h1>Get restaurant by id</h1>
+
+*`HTTP method:`***`GET`**
+
+*`URL:`***`/api/restaurants/:id`**
+
+pass in the id through url
+
+returns an array containing a single restaurant
+
 <h1>Edit restaurant</h1>
 
 valid token required
@@ -116,24 +162,6 @@ valid token required
 *`URL:`***`/api/restaurants/:id`**
 
 pass in the restaurant id through url
-
-<h1>Get list of all restaurants</h1>
-
-*`HTTP method:`***`GET`**
-
-*`URL:`***`/api/restaurants`**
-
-returns all restaurants
-
-<h1>Get restaurant by id</h1>
-
-*`HTTP method:`***`GET`**
-
-*`URL:`***`/api/restaurants/:id`**
-
-pass in the id through url
-
-returns an array containing a single restaurant
 
 <h1>Add a Review</h1>
 

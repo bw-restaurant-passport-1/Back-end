@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "cross-env DB_ENV=testing jest --watch"
+    "test": "jest --watch"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

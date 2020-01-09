@@ -9,8 +9,8 @@ describe("server", () => {
       expect(response.status).toEqual(200);
     });
 
-    it("should return a JSON object fron the index route", async () => {
-      const expectedBody = { api: "running" };
+    it("should return welcome message", async () => {
+      const expectedBody = { message: "welcome" };
 
       const response = await request(server).get("/");
 

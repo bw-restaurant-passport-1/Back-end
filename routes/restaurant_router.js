@@ -43,4 +43,14 @@ router.get("/:id", (req, res) => {
     })
 })
 
+router.delete("/:id", auth, (req, res) => {
+  Restaurants.remove(req.params.id)
+  .then(restaurant => {
+    res.status(200).json("removed restaurant id: " + req.params.id)
+  })
+  .catch(err => {
+    res.status(500).json({message: "server error", error: err})
+  })
+})
+
 module.exports = router

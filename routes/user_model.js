@@ -1,13 +1,5 @@
 const db = require("../data/dbConfig");
 
-function add(user) {
-  return db("users").insert(user)
-}
-
-function edit(data, id) {
-  return db("users").where("id", "=", id).update(data)
-}
-
 function remove(id) {
   return db("users").where("id", "=", id).del()
 }
@@ -17,7 +9,16 @@ function find() {
 }
 
 function findBy(filter) {
-  return db("users").where(filter)
+  return db("users").where(filter).first()
+}
+async function add(user) {
+	const [ id ] = await db('users').insert(user)
+
+	return findBy({id})
+}
+
+function edit(data, id) {
+  return db("users").where("id", "=", id).update(data)
 }
 
 module.exports = {

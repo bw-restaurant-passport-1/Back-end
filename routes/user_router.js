@@ -12,10 +12,18 @@ router.post("/register", (req, res) => {
   
   Users.add(user)
   .then(user => {
+    console.log(user)
     const token = genToken(user)
-    res.status(200).json({message: "registered!", token: token})
+    res.status(200).json({message: "registered!",
+    username: user.username,
+    name: user.name,
+    email: user.email,
+    city: user.city,
+    avatarURL: user.avatarURL,
+    token: token})
   })
   .catch(err => {
+    console.log(err)
     res.status(500).json({message: "server error", error: err})
   })
 })
@@ -62,6 +70,20 @@ router.get("/users", auth, (req, res) => {
     .catch(err => {
       res.status(500).json({message: "server error", error: err})
     })
+})
+
+router.get("/:id", auth, (req, res) => {
+  Users.findBy({id: req.params.id})
+  .then(user => {
+    if (user) {
+    res.status(200).json(user)
+    } else {
+      res.status(404).json({message: "user not found"})
+    }
+  })
+  .catch(err => {
+    res.status(500).json({message: "server error", error: err})
+  })
 })
 
 router.put("/:id", auth, (req, res) => {

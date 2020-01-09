@@ -72,7 +72,7 @@ valid token required
 
 *`HTTP method:`***`POST`**
 
-*`URL:`***`/api/restaurant`**
+*`URL:`***`/api/restaurants`**
 
 | Name           | Type   | Required | Unique | Description           |
 | :------------- | :----- | :------: | :----: | :-------------------- |
@@ -87,7 +87,6 @@ valid token required
 example
 ```
 {
-		"id": 1,
 		"restaurantName": "Chili's",
 		"streetAddress": "3917 S Gilbert Rd",
 		"city": "Gilbert",

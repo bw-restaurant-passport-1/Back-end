@@ -87,7 +87,6 @@ valid token required
 example
 ```
 {
-		"id": 1,
 		"restaurantName": "Chili's",
 		"streetAddress": "3917 S Gilbert Rd",
 		"city": "Gilbert",

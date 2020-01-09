@@ -32,5 +32,12 @@
   "bugs": {
     "url": "https://github.com/bw-restaurant-passport-1/Back-end/issues"
   },
-  "homepage": "https://github.com/bw-restaurant-passport-1/Back-end#readme"
+  "homepage": "https://github.com/bw-restaurant-passport-1/Back-end#readme",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvirnoment": "node"
+  }
 }

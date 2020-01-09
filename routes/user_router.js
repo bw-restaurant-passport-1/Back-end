@@ -15,6 +15,7 @@ router.post("/register", (req, res) => {
     console.log(user)
     const token = genToken(user)
     res.status(200).json({message: "registered!",
+    id: user.id,
     username: user.username,
     name: user.name,
     email: user.email,
@@ -37,6 +38,7 @@ router.post("/login", (req, res) => {
     if (user && bcrypt.compareSync(password, user.password)) {
       const token = genToken(user)
       res.status(200).json({message: "logged in!",
+      id: user.id,
       username: username,
       name: user.name,
       email: user.email,

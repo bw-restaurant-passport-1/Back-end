@@ -61,6 +61,22 @@ describe("user_router_model", () => {
   })
 
   describe("login", () => {
+    it("should return user information", async() => {
+      await request(server).post("/api/users/register").send({
+        username: "aiden",
+        password: "123",
+        city: "gilbert",
+        name: "aiden",
+        email: "aiden@aiden.com"
+      })
+
+      const response = await request(server)
+      .post("/api/users/login")
+      .send({username: "aiden", password: "123"})
+
+      expect(response.text).toContain("id", "username", "name", "email","city")
+    })
+
     it("should return token", async() => {
       await request(server).post("/api/users/register").send({
         username: "aiden",
@@ -76,16 +92,50 @@ describe("user_router_model", () => {
 
       expect(response.text).toContain("token")
     })
-    
-    // test('It responds with JSON', () => {
-    //   return request(server)
-    //     .get('/users/users')
-    //     //.set('Authorization', token)
-    //     .then((response) => {
-    //       expect(response.statusCode).toBe(200);
-    //       expect(response.type).toBe('application/json');
-    //     });
-    // });
+    beforeEach(async () => {
+      await db("users").truncate()
+    })
+  })
+
+  describe("user editing", () => {
+    it("should return 200", async () => {
+      let register = await request(server).post("/api/users/register").send({
+        username: "aiden",
+        password: "123",
+        city: "gilbert",
+        name: "aiden",
+        email: "aiden@aiden.com"
+      })
+      let data = JSON.parse(register.text)
+      expect(data.token).toBeDefined()
+
+      const response = await request(server).put("/api/users/1").set('Authorization', data.token).send({city: "phoenix"})
+
+      expect(response.status).toBe(200)
+    })
+
+    beforeEach(async () => {
+      await db("users").truncate()
+    })
+  })
+
+  describe("user deleting", () => {
+    it("should return 200", async () => {
+      let register = await request(server).post("/api/users/register").send({
+        username: "aiden",
+        password: "123",
+        city: "gilbert",
+        name: "aiden",
+        email: "aiden@aiden.com"
+      })
+      let data = JSON.parse(register.text)
+      expect(data.token).toBeDefined()
+
+      const response = await request(server).del("/api/users/1").set('Authorization', data.token).send({city: "phoenix"})
+
+      expect(response.status).toBe(200)
+    })
+
     beforeEach(async () => {
       await db("users").truncate()
     })

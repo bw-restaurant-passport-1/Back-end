@@ -3,7 +3,7 @@ const db = require("../data/dbConfig")
 const request = require("supertest")
 const server = require("../server")
 
-describe("restaurant_model_router", () => {
+describe("restaurant_router_model", () => {
   it("should be test environment", () => {
     expect(process.env.DB_ENV).toBe("testing")
   })
@@ -24,11 +24,11 @@ describe("restaurant_model_router", () => {
 
     it("authorized should return 200", async () => {
       let register = await request(server).post("/api/users/register").send({
-        username: "aiden",
+        username: "aiden2",
         password: "123",
         city: "gilbert",
         name: "aiden",
-        email: "aiden@aiden.com"
+        email: "aiden2@aiden.com"
       })
       let data = JSON.parse(register.text)
 
